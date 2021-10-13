@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+    
+    tr {
+        // border-top: 1px solid #dee2e6;
+        top: 4px solid green;
+        border-top: 1px solid green;
+        height: 70px;
+        
+        th {
+            text-align: left;
+        }
+        
+        td {
+            border-top: 1px solid green;
+            padding: 5px 8px;
+            height: 30px;
+            font-size: .875rem;
+            vertical-align: middle;
+            
+            .coin-img {
+                width: 1.5rem;
+                margin-right: 10px;
+            }
+            
+            .coin-symbol {
+                text-transform: uppercase;
+            }
+            
+            .price-success {
+                color: green;
+            }
+            
+            .price-danger {
+                color: red;
+            }
+        }
+    }
+}
+

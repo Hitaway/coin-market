@@ -1,0 +1,12 @@
+{
+    "SEARCH_COIN": "Rincón de búsqueda",
+    "TABLE": {
+        "COIN": "Coin",
+        "PRICE": "Precio",
+        "PRICE_CHANGE": "Cambio de precio",
+        "24H_VOLUME": "Volumen 24H",
+        "MARKET_CAP": "Capitalización",
+        "CIRCULATING_SUPPLY": "Suministro de circulación",
+        "MAX_SUPPLY": "Suministro máximo"
+    }
+}

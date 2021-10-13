@@ -1,0 +1,53 @@
+<input
+    type="text"
+    placeholder="{{ 'SEARCH_COIN' | translate }}"
+    autofocus
+    (keyup)="searchCoin()"
+    [(ngModel)]="searchText"
+/>
+<table>
+    <thead>
+        <tr>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap_rank">#</th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="name" class="th-col-name"> {{ 'TABLE.COIN' | translate }} </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="current_price"> {{ 'TABLE.PRICE' | translate }} </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="price_change_percentage_24h"> {{ 'TABLE.PRICE_CHANGE' | translate }} </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="total_volume"> {{ 'TABLE.24H_VOLUME' | translate }} </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap"> {{ 'TABLE.MARKET_CAP' | translate }} </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="circulating_supply"> {{ 'TABLE.CIRCULATING_SUPPLY' | translate }} </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="max_supply"> {{ 'TABLE.MAX_SUPPLY' | translate }} </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let coin of filteredCoints; let i = index">
+            <td> {{ coin.market_cap_rank }} </td>
+            <td>
+                <img
+                    [src]="coin.image"
+                    alt="{{ coin.name }}"
+                    class="coin-img"
+                />
+                <span> {{ coin.name }} </span>
+                <span class="coin-symbol"> {{ coin.symbol }} </span>
+            </td>
+            <td> {{ coin.current_price }} </td>
+            <td
+                [ngClass]="
+                    coin.price_change_percentage_24h > 0
+                    ? 'price-success'
+                    : 'price-danger'
+                ">
+                {{ coin.price_change_percentage_24h }}
+            </td>
+            <td> {{ coin.total_volume }} </td>
+            <td> {{ coin.market_cap }} </td>
+            <td> {{ coin.circulating_supply }} </td>
+            <td *ngIf="coin.max_supply === null; else elseBlock">
+                -
+            </td>
+            <ng-template #elseBlock>
+                <td> {{ coin.max_supply }} </td>
+            </ng-template>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,5 @@
+<select #selCur (change)="switchCurrency(selCur.value)">
+    <option *ngFor="let currency of this.currencyService.currencyList" [value]="currency"> 
+        {{ currency }} 
+    </option>
+</select>
