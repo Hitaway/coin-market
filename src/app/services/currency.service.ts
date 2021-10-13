@@ -7,10 +7,10 @@ import { currencyList } from './currency';
 })
 export class CurrencyService {
   
-  public subject = new Subject<any>();
   public currencyList: string[] = currencyList;
   public currentCurrency: string = 'usd';
-
+  public subject = new Subject<any>();
+  
   public sendChangeCurrencyEvent(): void {
     this.subject.next();
   }

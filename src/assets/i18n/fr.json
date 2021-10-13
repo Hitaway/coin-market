@@ -1,7 +1,7 @@
 {
     "SEARCH_COIN": "Rechercher Coin",
     "TABLE": {
-        "COIN": "Coin",
+        "NAME": "Nom",
         "PRICE": "Prix",
         "PRICE_CHANGE": "Changement de Prix",
         "24H_VOLUME": "Volume 24H",
