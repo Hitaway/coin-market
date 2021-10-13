@@ -1,10 +1,9 @@
 table {
     width: 100%;
+    border-collapse: collapse;
     
     tr {
-        // border-top: 1px solid #dee2e6;
-        top: 4px solid green;
-        border-top: 1px solid green;
+        border-top: 1px solid #dee2e6;
         height: 70px;
         
         th {
@@ -12,7 +11,6 @@ table {
         }
         
         td {
-            border-top: 1px solid green;
             padding: 5px 8px;
             height: 30px;
             font-size: .875rem;
@@ -26,14 +24,14 @@ table {
             .coin-symbol {
                 text-transform: uppercase;
             }
-            
-            .price-success {
-                color: green;
-            }
-            
-            .price-danger {
-                color: red;
-            }
+        }
+        
+        .price-success {
+            color: #16c784;
+        }
+        
+        .price-danger {
+            color: #ea3943;
         }
     }
 }
