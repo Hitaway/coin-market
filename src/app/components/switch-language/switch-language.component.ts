@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
+import { LanguageService } from '../../services/language.service';
+
 @Component({
   selector: 'app-switch-language',
   templateUrl: './switch-language.component.html',
@@ -8,16 +10,20 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class SwitchLanguageComponent {
 
-  public languages: string[] = ['en', 'es', 'fr'];
-
-  constructor (public translate: TranslateService) {
-    translate.addLangs(this.languages);
-    translate.setDefaultLang('en');
+  constructor (
+    public translate: TranslateService,
+    public languageService: LanguageService
+  ) {
+    translate.addLangs(this.languageService.getListLanguages());
+    translate.setDefaultLang(this.languageService.getDefaultLanguage());
+    this.languageService.setCurrentLanguage(this.languageService.getDefaultLanguage());
   }
 
   // Switch language
-  public translateLanguageTo(lang: string) {
+  public translateLanguageTo(lang: string): void {
     this.translate.use(lang);
+    this.languageService.setCurrentLanguage(lang);
+    this.languageService.sendChangeLanguageEvent();
   }
 
 }
