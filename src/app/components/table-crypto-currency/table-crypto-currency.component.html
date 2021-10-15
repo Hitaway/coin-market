@@ -8,14 +8,38 @@
 <table>
     <thead>
         <tr>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap_rank">#</th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="name"> {{ 'TABLE.NAME' | translate }} </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="current_price"> {{ 'TABLE.PRICE' | translate }} </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="price_change_percentage_24h"> {{ 'TABLE.PRICE_CHANGE' | translate }} </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="total_volume"> {{ 'TABLE.24H_VOLUME' | translate }} </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap"> {{ 'TABLE.MARKET_CAP' | translate }} </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="circulating_supply"> {{ 'TABLE.CIRCULATING_SUPPLY' | translate }} </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="max_supply"> {{ 'TABLE.MAX_SUPPLY' | translate }} </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap_rank" class="cell-align-left">
+                #
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+            </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="name" class="cell-align-left"> 
+                {{ 'TABLE.NAME' | translate }} 
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+            </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="current_price" class="cell-align-right"> 
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+                {{ 'TABLE.PRICE' | translate }} 
+            </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="price_change_percentage_24h" class="cell-align-right"> 
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+                {{ 'TABLE.PRICE_CHANGE' | translate }} 
+            </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="total_volume" class="cell-align-right"> 
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+                {{ 'TABLE.24H_VOLUME' | translate }}
+            </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap" class="cell-align-right"> 
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+                {{ 'TABLE.MARKET_CAP' | translate }} 
+            </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="circulating_supply" class="cell-align-right"> 
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+                {{ 'TABLE.CIRCULATING_SUPPLY' | translate }} 
+            </th>
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="max_supply" class="cell-align-right"> 
+                <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
+                {{ 'TABLE.MAX_SUPPLY' | translate }} 
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -30,8 +54,8 @@
                 <span> {{ coin.name }} </span>
                 <span class="coin-symbol"> {{ coin.symbol }} </span>
             </td>
-            <td> {{ coin.current_price | currency: currencyCode : 'symbol' : '1.0-15' : currentLanguage }} </td>
-            <td
+            <td class="cell-align-right"> {{ coin.current_price | currency: currencyCode : 'symbol' : '1.0-15' : currentLanguage }} </td>
+            <td class="cell-align-right"
                 [ngClass]="
                     coin.price_change_percentage_24h > 0
                     ? 'price-success'
@@ -39,17 +63,17 @@
                 ">
                 {{ coin.price_change_percentage_24h / 100 | percent : '1.2-2' : currentLanguage }}
             </td>
-            <td> {{ coin.total_volume | currency: currencyCode : 'symbol' : '1.0-0' : currentLanguage  }} </td>
-            <td> {{ coin.market_cap | currency: currencyCode : 'symbol' : '1.0-0' : currentLanguage  }} </td>
-            <td class= "circulating-supply"> 
+            <td class="cell-align-right"> {{ coin.total_volume | currency: currencyCode : 'symbol' : '1.0-0' : currentLanguage  }} </td>
+            <td class="cell-align-right"> {{ coin.market_cap | currency: currencyCode : 'symbol' : '1.0-0' : currentLanguage  }} </td>
+            <td class= "circulating-supply cell-align-right"> 
                 <span> {{ coin.circulating_supply | number: '1.0-0' : currentLanguage  }} </span>
                 <span class="coin-symbol"> {{ coin.symbol }} </span>
             </td>
-            <td *ngIf="coin.max_supply === null; else elseBlock">
+            <td *ngIf="coin.max_supply === null; else elseBlock" class="cell-align-center">
                 -
             </td>
-            <ng-template #elseBlock>
-                <td> {{ coin.max_supply | number: '1.0-0' : currentLanguage  }} </td>
+            <ng-template #elseBlock >
+                <td class="cell-align-right"> {{ coin.max_supply | number: '1.0-0' : currentLanguage  }} </td>
             </ng-template>
         </tr>
     </tbody>

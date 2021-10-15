@@ -3,8 +3,8 @@
     "TABLE": {
         "NAME": "Apellido",
         "PRICE": "Precio",
-        "PRICE_CHANGE": "Cambio de precio",
-        "24H_VOLUME": "Volumen 24H",
+        "PRICE_CHANGE": "24h %",
+        "24H_VOLUME": "Volumen 24h",
         "MARKET_CAP": "Capitalización",
         "CIRCULATING_SUPPLY": "Suministro de circulación",
         "MAX_SUPPLY": "Suministro máximo"

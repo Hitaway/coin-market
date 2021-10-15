@@ -5,20 +5,48 @@ table {
     tr {
         border-top: 1px solid #dee2e6;
         height: 70px;
-        
+
         th {
+            cursor: pointer;
+            margin-left: 20px;
+            margin-right: 20px;
+            
+            .arrow-sort-up {
+                width: 10px;          
+            }
+            
+            .arrow-sort-down {
+                transform: rotate(180deg);
+                width: 10px;
+            }
+            
+            .arrow-hide {
+                display: none;
+            }
+            
+        }
+        
+        .cell-align-left {
             text-align: left;
+        }
+        
+        .cell-align-right {
+            text-align: right;
+        }
+        
+        .cell-align-center {
+            text-align: center;
         }
         
         td {
             padding: 5px 8px;
             height: 30px;
             font-size: .875rem;
-            vertical-align: middle;
             
             .coin-img {
                 width: 1.5rem;
                 margin-right: 10px;
+                vertical-align: middle;
             }
             
             .coin-symbol {

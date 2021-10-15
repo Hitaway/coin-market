@@ -3,8 +3,8 @@
     "TABLE": {
         "NAME": "Nom",
         "PRICE": "Prix",
-        "PRICE_CHANGE": "Changement de Prix",
-        "24H_VOLUME": "Volume 24H",
+        "PRICE_CHANGE": "24h %",
+        "24H_VOLUME": "Volume 24h",
         "MARKET_CAP": "Capitalisation",
         "CIRCULATING_SUPPLY": "Approvisionnement en Circulation",
         "MAX_SUPPLY": "Approvisionnement Maximum"
