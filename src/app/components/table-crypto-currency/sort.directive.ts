@@ -7,7 +7,7 @@ import { Sort } from './sort';
 export class SortDirective {
 
   @Input() appSort: Array<any> = [];
-  constructor(private renderer: Renderer2, private targetElem: ElementRef) { }
+  constructor(private targetElem: ElementRef) { }
 
   @HostListener("click")
   sortData() {
@@ -24,10 +24,24 @@ export class SortDirective {
     if (order === "desc") {
       this.appSort.sort(sort.startSort(property, order, type));
       elem.setAttribute("data-order", "asc");
+      this.hideArrowHeaderTable();
+      elem.children[0].setAttribute("class","arrow-sort-up");
     }
     else {
       this.appSort.sort(sort.startSort(property, order, type));
       elem.setAttribute("data-order", "desc");
+      this.hideArrowHeaderTable();
+      elem.children[0].setAttribute("class","arrow-sort-down");
     }
+  }
+  
+  // Hide the arrows of the whole table to display the sorting arrow of the current table
+  public hideArrowHeaderTable(): void {
+    // Get The parent element
+    const parentElem = this.targetElem.nativeElement.parentNode;
+    for (let i=0; i < parentElem.children.length; i++) {
+      parentElem.children[i].children[0].setAttribute("class","arrow-hide")
+    }
+    
   }
 }
