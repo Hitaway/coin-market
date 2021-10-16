@@ -8,7 +8,7 @@
 <table>
     <thead>
         <tr>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap_rank" class="cell-align-left">
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap_rank" data-type="number" class="cell-align-left">
                 #
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
             </th>
@@ -16,27 +16,27 @@
                 {{ 'TABLE.NAME' | translate }} 
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
             </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="current_price" class="cell-align-right"> 
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="current_price" data-type="number" class="cell-align-right"> 
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
                 {{ 'TABLE.PRICE' | translate }} 
             </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="price_change_percentage_24h" class="cell-align-right"> 
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="price_change_percentage_24h" data-type="number" class="cell-align-right"> 
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
                 {{ 'TABLE.PRICE_CHANGE' | translate }} 
             </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="total_volume" class="cell-align-right"> 
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="total_volume" data-type="number" class="cell-align-right"> 
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
                 {{ 'TABLE.24H_VOLUME' | translate }}
             </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap" class="cell-align-right"> 
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="market_cap" data-type="number" class="cell-align-right"> 
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
                 {{ 'TABLE.MARKET_CAP' | translate }} 
             </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="circulating_supply" class="cell-align-right"> 
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="circulating_supply" data-type="number" class="cell-align-right"> 
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
                 {{ 'TABLE.CIRCULATING_SUPPLY' | translate }} 
             </th>
-            <th scope="col" [appSort]="coins" data-order="desc" data-name="max_supply" class="cell-align-right"> 
+            <th scope="col" [appSort]="coins" data-order="desc" data-name="max_supply" data-type="number" class="cell-align-right"> 
                 <img class="arrow-hide" src="../../../assets/img/arrow.png" alt="arrow">
                 {{ 'TABLE.MAX_SUPPLY' | translate }} 
             </th>
